@@ -1,0 +1,26 @@
+{
+  "name": "svit-igrashok",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Навчальний інтернет-магазин: Express, SQLite та Vanilla JS",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env --watch server/index.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
+    "admin": "node --env-file-if-exists=.env server/create-admin.js",
+    "format": "prettier --write server/**/*.js src/**/*.js src/**/*.html src/css/app.css tests/**/*.js docs/**/*.md README.md package.json"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.8"
+  }
+}

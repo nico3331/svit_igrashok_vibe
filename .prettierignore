@@ -1,0 +1,5 @@
+node_modules
+data
+src/img
+src/uploads
+package-lock.json

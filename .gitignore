@@ -1,0 +1,11 @@
+node_modules/
+data/
+.env
+src/uploads/*
+!src/uploads/.gitkeep
+test-results/
+*.log
+backups/
+
+# Original static snapshot; current sources are tracked directly.
+src.zip
