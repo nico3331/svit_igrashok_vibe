@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Світ Іграшок — навчальний інтернет-магазин іграшок. Конструктори, творчість та подарунки."
+    />
+    <title>Світ Іграшок</title>
+    <link rel="icon" href="/img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/sidebar.css" />
+    <link rel="stylesheet" href="/css/banners.css" />
+    <link rel="stylesheet" href="/css/products.css" />
+    <link rel="stylesheet" href="/css/brands.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/landing.css" />
+    <script type="module" src="/js/main.js"></script>
+  </head>
+  <body class="storefront">
+    <div class="announcement">
+      <span>Для маленьких людей із великими мріями.</span
+      ><a href="#catalog">Відкривайте світ гри <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="header-container">
+      <header class="header">
+        <a href="#home" class="logo" aria-label="Світ Іграшок — головна"
+          ><img src="/img/svit_igrashok_nosmltxt.png" alt="Світ Іграшок"
+        /></a>
+        <div class="search-bar">
+          <form id="search-form" role="search">
+            <input
+              name="q"
+              type="search"
+              maxlength="100"
+              placeholder="Яку іграшку шукаєте?"
+              aria-label="Пошук товарів"
+            /><button type="submit">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" />
+                <path d="m16 16 5 5" /></svg
+              >Пошук
+            </button>
+          </form>
+        </div>
+        <div class="user-actions">
+          <a href="#favorites" class="header-action" aria-label="Обране"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+              /></svg
+            ><span>Обране</span></a
+          >
+          <button id="account-button" class="header-action">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 22v-2a8 8 0 0 1 16 0v2" /></svg
+            ><span>Увійти</span>
+          </button>
+          <button id="cart-button" class="header-action">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              aria-hidden="true"
+            >
+              <path d="M4 8h16l-1 13H5L4 8Z" />
+              <path d="M8 9V6a4 4 0 0 1 8 0v3" /></svg
+            ><span>Кошик</span><b id="cart-count" class="counter" hidden>0</b>
+          </button>
+        </div>
+      </header>
+    </div>
+    <nav class="navigation container" aria-label="Основна навігація">
+      <a href="#catalog" class="catalog-link"
+        ><svg
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <rect x="2" y="2" width="5" height="5" rx="1" />
+          <rect x="12" y="2" width="5" height="5" rx="1" />
+          <rect x="2" y="12" width="5" height="5" rx="1" />
+          <rect x="12" y="12" width="5" height="5" rx="1" />
+        </svg>
+        Каталог іграшок</a
+      ><a href="#catalog?sale=1">Гарячі знижки</a><a href="#catalog?sort=newest">Новинки</a
+      ><a href="#about">Про нас</a><a href="#delivery">Оплата та доставка</a
+      ><a href="#contacts">Контакти</a><a id="admin-link" href="/admin.html" hidden>Адмінка ↗</a>
+    </nav>
+    <main id="app" class="container" tabindex="-1">
+      <div class="empty-state">Завантажуємо магазин…</div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <a href="#home" class="footer-logo"
+              ><img src="/img/svit_igrashok_nosmltxt.png" alt="Світ Іграшок"
+            /></a>
+            <p>Іграшки, що надихають мріяти, творити та відкривати світ.</p>
+            <p class="muted">Навчальний проєкт. Асортимент, ціни та контакти демонстраційні.</p>
+          </div>
+          <div class="footer-column">
+            <h2 class="footer-title">Покупцям</h2>
+            <div class="footer-links">
+              <a href="#about">Про магазин</a><a href="#delivery">Оплата та доставка</a
+              ><a href="#account">Мої замовлення</a><a href="#privacy">Конфіденційність</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h2 class="footer-title">Каталог</h2>
+            <div class="footer-links">
+              <a href="#catalog?category=1">Конструктори</a><a href="#catalog?category=2">Ляльки</a
+              ><a href="#catalog?category=9">Настільні ігри</a
+              ><a href="#catalog?category=5">Творчість</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h2 class="footer-title">Завжди на зв’язку</h2>
+            <p>Знайдіть відповіді на запитання<br />про покупки та замовлення.</p>
+
+            <a href="#contacts" class="text-link">Магазин та контакти →</a>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2026 Світ Іграшок · Зроблено з любов’ю до гри</div>
+      </div>
+    </footer>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="dialog-heading">
+        <h2 id="modal-title"></h2>
+        <button id="close-modal" class="icon-button" aria-label="Закрити">×</button>
+      </div>
+      <div id="modal-body"></div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite" hidden></div>
+    <noscript>Для роботи магазину увімкніть JavaScript.</noscript>
+  </body>
+</html>

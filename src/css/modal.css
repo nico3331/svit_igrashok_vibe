@@ -1,0 +1,143 @@
+/* Затемнення фону (оверлей) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий чорний */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Щоб вікно було поверх усього */
+    
+    /* Приховано за замовчуванням */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Коли модальне вікно активне */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Вміст модального вікна */
+.modal-content {
+    background-color: var(--white);
+    padding: 30px 40px;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    
+    /* Анімація появи вікна */
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Кнопка закриття */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+/* Заголовок */
+.modal-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: var(--text-main);
+    text-align: center;
+}
+
+/* Форма */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg);
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    background-color: var(--white);
+}
+
+/* Кнопка відправки */
+.btn-submit {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Текст під кнопкою */
+.modal-footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.modal-footer-text a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.modal-footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Modal */
+@media (max-width: 576px) {
+    .modal-content {
+        width: 95%;
+        padding: 25px 20px;
+    }
+}

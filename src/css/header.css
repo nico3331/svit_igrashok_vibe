@@ -1,0 +1,250 @@
+.header-container {
+    background-color: var(--input-bg);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 9px 20px;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-bar form {
+    display: flex;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px 15px;
+    background: transparent;
+    font-size: 14px;
+    color: #2B2B2B;
+}
+
+.search-bar button {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.search-bar button:hover {
+    background: var(--primary-hover);
+}
+
+.search-bar button img {
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.top-nav ul {
+    display: flex;
+    gap: 24px;
+}
+
+.top-nav a {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    color: var(--primary-color);
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login,
+.btn-cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-login {
+    background: var(--btn-bg-light);
+    color: var(--text-main);
+}
+
+.btn-login:hover {
+    background: #dcdcdc;
+}
+
+.btn-cart {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-cart:hover {
+    border-color: var(--primary-color);
+}
+
+.user-actions .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Burger Menu Styles */
+.btn-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.btn-burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--text-main);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.btn-burger.active span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.btn-burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn-burger.active span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Responsive Header */
+@media (max-width: 1200px) {
+    .header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .top-nav {
+        display: none;
+        order: 4;
+        width: 100%;
+        margin-top: 15px;
+        background: var(--white);
+        border-radius: 12px;
+        /* Бордер радіус на меню бургера */
+        padding: 15px;
+    }
+
+    .top-nav.active {
+        display: block;
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .search-bar {
+        flex-basis: 100%;
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .btn-burger {
+        display: flex;
+    }
+
+    .logo {
+        margin-right: auto;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 35px;
+    }
+
+    .btn-login span,
+    .btn-cart span:not(.cart-badge) {
+        display: none;
+        /* Ховаємо текст кнопок на дуже малих екранах */
+    }
+
+    .btn-login,
+    .btn-cart {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 367px) {
+    .header {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .btn-burger {
+        position: absolute;
+        top: 22px;
+        left: 22px;
+    }
+
+    .user-actions {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .search-bar {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .search-bar form {
+        display: flex;
+        width: 100%;
+    }
+
+    .search-bar input {
+        flex: 1;
+        min-width: 0;
+    }
+}

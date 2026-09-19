@@ -1,0 +1,56 @@
+:root {
+    --primary-color: #eb3c7f;
+    --primary-hover: #d22d6c;
+    --bg-color: #E5E5E5;
+    --white: #ffffff;
+    --text-main: #2B2B2B;
+    --text-muted: #888888;
+    --border-color: #e0e0e0;
+    --input-bg: #F2F2F2;
+    --btn-bg-light: #EAEAEA;
+    --font-main: 'Nunito', sans-serif;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+input {
+    font-family: inherit;
+    outline: none;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    width: 100%;
+}

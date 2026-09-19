@@ -1,0 +1,148 @@
+/* css/footer.css */
+.footer {
+    background-color: var(--white);
+    padding: 60px 0 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+.contact-item img {
+    height: 20px;
+    width: 20px;
+    filter: grayscale(100%) opacity(0.6);
+}
+
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.social-icon img {
+    height: 16px;
+    width: auto;
+    transition: all 0.3s ease;
+    /* Якщо іконки кольорові, можна зробити їх сірими за замовчуванням */
+    filter: grayscale(100%) opacity(0.7);
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(235, 60, 127, 0.3);
+    /* Тінь кольору primary */
+}
+
+.social-icon:hover img {
+    /* Робимо іконку чисто білою при наведенні */
+    filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        gap: 20px;
+    }
+    .footer-column {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-column {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .footer-contact {
+        align-items: center;
+        justify-content: center;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
